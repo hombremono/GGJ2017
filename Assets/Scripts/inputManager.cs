@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class inputManager : MonoBehaviour
 {
+    bool pause = false;
     public GameObject ElementsPanel;
     void Start()
     {
@@ -20,7 +22,7 @@ public class inputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick1Button3))
             ElementsPanel.GetComponent<TikiGenerator>().NextElement('Y');
         if (Input.GetKeyDown(KeyCode.Joystick1Button7))
-            print("START button");
+            SceneManager.LoadScene("PauseMenu");
         if (Input.GetAxis("Horizontal") != 0)
             print("axis X");
         if (Input.GetAxis("Vertical") != 0)
