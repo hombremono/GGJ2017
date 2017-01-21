@@ -10,19 +10,24 @@ public class TestSpawner : MonoBehaviour {
     public Transform[] attackPoints;
     public GameObject prefabToSpawn;
     public int spawnRate;
+    //public float spawnTime = 3f;
     //----------------------------------------------------
 
 
-	// Use this for initialization
-	void Start ()
-	{
-	    StartCoroutine(Spawn());
+    //Use this for initialization
 
+   void Start ()
+    {
+        StartCoroutine(Spawn());
+    }
+    //void Start()
+    //{
+    //    // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
+    //    InvokeRepeating("Spawn", spawnTime, spawnTime);
+    //}
 
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update ()
     {
 		
 	}
@@ -31,15 +36,37 @@ public class TestSpawner : MonoBehaviour {
     // corutinas
     IEnumerator Spawn()
     {
-        print(Time.time);
+        //WavesSingleton.Instance.AddWave();
         int number = Random.Range(0, attackPoints.Length);
         Transform t = attackPoints[number];
-
         var spawnedObject = Instantiate(prefabToSpawn, t.position, Quaternion.identity);
-        spawnedObject.transform.parent = gameObject.transform;
+        if (WavesSingleton.Instance.AddWave(spawnedObject))
+        {
+            spawnedObject.transform.parent = gameObject.transform;
+        }
+        else
+        {
+            Destroy(spawnedObject);
+        }
+
         yield return new WaitForSeconds(spawnRate);
+
         StartCoroutine(Spawn());
     }
+    //void Spawn()
+    //{
+    //    int number = Random.Range(0, attackPoints.Length);
+    //    Transform t = attackPoints[number];
+    //    var spawnedObject = Instantiate(prefabToSpawn, t.position, Quaternion.identity);
+    //    if (WavesSingleton.Instance.AddWave(spawnedObject))
+    //    {
+    //        spawnedObject.transform.parent = gameObject.transform;
+    //    }
+    //    else
+    //    {
+    //        Destroy(spawnedObject);
+    //    }
+    //}
 }
 
 /*  var myNewSmoke = Instantiate (poisonSmoke, Vector3(transform.position.x,transform.position.y, transform.position.z) , Quaternion.identity);

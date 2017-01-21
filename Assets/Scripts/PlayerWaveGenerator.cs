@@ -5,21 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerWaveGenerator : MonoBehaviour {
 
-    List<List<char>> WavesList;
+    List<GameObject> WavesList;
     public List<char> CurrentSequence;
     public Text txt_CurrentSequence;
-    public Text txt_Waves;
+    
 
     // Use this for initialization
     void Start () {
-        WavesList = new List<List<char>>();
+        WavesList = WavesSingleton.Instance.WavesList;
 
-        //Ini para test
-        WavesList.Add(new List<char> { 'A', 'B', 'A' });
-        WavesList.Add(new List<char> { 'X', 'B', 'A' });
-        WavesList.Add(new List<char> { 'B', 'Y', 'Y' });
-        WavesList.Add(new List<char> { 'X', 'Y', 'A' });
-        updateWavesText();
+        ////Ini para test
+        //WavesList.Add(new List<char> { 'A', 'B', 'A' });
+        //WavesList.Add(new List<char> { 'X', 'B', 'A' });
+        //WavesList.Add(new List<char> { 'B', 'Y', 'Y' });
+        //WavesList.Add(new List<char> { 'X', 'Y', 'A' });
+       // updateWavesText();
     }
 
     // Update is called once per frame
@@ -38,14 +38,14 @@ public class PlayerWaveGenerator : MonoBehaviour {
 
     public void NextElement(char nextElement)
     {
-        List<char> KilledWave=null;
+        GameObject KilledWave=null;
         CurrentSequence.Add(nextElement);
         updateCurrentSequenceText();
         if (CurrentSequence.Count == 3)
         {
             foreach (var wave in WavesList)
             {
-                if (CompareLists(wave))
+                if (CompareLists(wave.GetComponent<testWave>().Sequence))
                 {
                     KilledWave = wave;
                     break;
@@ -53,9 +53,11 @@ public class PlayerWaveGenerator : MonoBehaviour {
             }
             CurrentSequence = new List<char>();
             if (KilledWave != null)
-                RemoveWave(KilledWave);
+            {
+               WavesSingleton.Instance.RemoveWave(KilledWave);
+            }
+                
         }
-        updateWavesText();
     }
 
     private bool CompareLists(List<char> Sequence)
@@ -86,27 +88,9 @@ public class PlayerWaveGenerator : MonoBehaviour {
         txt_CurrentSequence.text = text;
     }
 
-    public void updateWavesText()
-    {
-        string text = string.Empty;
-        foreach (var wave in WavesList)
-        {
-            foreach (var item in wave)
-            {
-                text += item.ToString() + "  ";
-            }
-            text += "|| ";
-        }
-        txt_Waves.text = text;
-    }
+   
 
-    public void AddWave(List<char> wave)
-    {
-        WavesList.Add(wave);
-    }
+ 
 
-    public void RemoveWave(List<char> wave)
-    {
-        WavesList.Remove(wave);
-    }
+   
 }
