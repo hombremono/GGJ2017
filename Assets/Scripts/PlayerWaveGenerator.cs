@@ -95,7 +95,7 @@ public class PlayerWaveGenerator : MonoBehaviour {
             {
                 text += item.ToString() + "  ";
             }
-            text += "\n";
+            text += "|| ";
         }
         txt_Waves.text = text;
     }
