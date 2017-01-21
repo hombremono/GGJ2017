@@ -10,8 +10,7 @@ public class TikiGenerator : MonoBehaviour {
     public List<char> SequenceA;
     public List<char> SequenceB;
     public List<char> CurrentSequence;
-    public int SequenceSize;
-    public Text txt_CurrentSequence;
+    public UnityEngine.UI.Text txt_CurrentSequence;
 
     // Use this for initialization
     void Start () {
@@ -22,20 +21,21 @@ public class TikiGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            this.NextElement('X');
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            this.NextElement('Y');
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            this.NextElement('A');
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-            this.NextElement('B');
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //    this.NextElement('X');
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //    this.NextElement('Y');
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //    this.NextElement('A');
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //    this.NextElement('B');
     }
 
     public void NextElement(char nextElement)
     {
 
         CurrentSequence.Add(nextElement);
+        updateCurrentSequenceText();
         if (CurrentSequence.Count == 3)
         {
             if (CompareLists(SequenceX)) 
@@ -49,7 +49,7 @@ public class TikiGenerator : MonoBehaviour {
 
             CurrentSequence = new List<char>();
         }
-        updateCurrentSequenceText();
+        
     }
 
     private bool CompareLists(List<char> Sequence)
@@ -71,7 +71,7 @@ public class TikiGenerator : MonoBehaviour {
 
     public void updateCurrentSequenceText()
     {
-        string text = string.Empty;
+        string text =string.Empty;
 
         foreach (var item in CurrentSequence)
         {
