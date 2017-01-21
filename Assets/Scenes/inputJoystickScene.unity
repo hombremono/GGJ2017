@@ -217,27 +217,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114605565445916242, guid: f3593001505867e408e2736b0ab6630c,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1096235138583116, guid: f3593001505867e408e2736b0ab6630c,
+        type: 2}
+    - target: {fileID: 114605565445916242, guid: f3593001505867e408e2736b0ab6630c,
+        type: 2}
+      propertyPath: playerNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3593001505867e408e2736b0ab6630c, type: 2}
-  m_RootGameObject: {fileID: 1817092648}
   m_IsPrefabParent: 0
---- !u!1 &1817092648
+--- !u!1 &1817092648 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1096235138583116, guid: f3593001505867e408e2736b0ab6630c,
     type: 2}
   m_PrefabInternal: {fileID: 1817092647}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1817092650}
-  - component: {fileID: 1817092649}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &1817092649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,17 +247,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27225b2be3d13f44986c8602a88451a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1817092650
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4900953232705678, guid: f3593001505867e408e2736b0ab6630c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1817092647}
-  m_GameObject: {fileID: 1817092648}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  Target: {fileID: 1817092648}
+  playerNumber: 0

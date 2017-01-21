@@ -9,29 +9,21 @@ public class inputManager : MonoBehaviour
     public GameObject Target;
     private bool isWaveKiller;
     public int playerNumber;
+    KeyCode key;
+    void getInput(string input)
+    {
+
+    }
+
     void Start()
     {
         if (Target.GetComponent<TikiGenerator>() == null)
             isWaveKiller = true;
     }
+
     // Update is called once per frame
     void Update()
     {
-
-        //if (Input.GetButtonDown("A_J"+playerNumber))
-        //    SendCommand('A');
-        //if (Input.GetButtonDown("B_J" + playerNumber))
-        //    SendCommand('B');
-        //if (Input.GetButtonDown("X_J" + playerNumber))
-        //    SendCommand('X');
-        //if (Input.GetButtonDown("Y_J" + playerNumber))
-        //    SendCommand('Y');
-        //if (Input.GetKeyDown(KeyCode.Joystick1Button7))
-        //    print("START button");
-        //if (Input.GetAxis("Horizontal") != 0)
-        //    print("axis X");
-        //if (Input.GetAxis("Vertical") != 0)
-        //    print("axis Y");
 
         if (playerNumber == 1)
         {
@@ -44,7 +36,9 @@ public class inputManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Joystick1Button3))
                 SendCommand('Y');
             if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+            {
                 SceneManager.LoadScene("PauseMenu");
+            }
             //if (Input.GetAxis("Horizontal") != 0)
             //    print("axis X");
             //if (Input.GetAxis("Vertical") != 0)
@@ -61,7 +55,9 @@ public class inputManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Joystick2Button3))
                 SendCommand('Y');
             if (Input.GetKeyDown(KeyCode.Joystick2Button7))
+            {
                 SceneManager.LoadScene("PauseMenu");
+            }
             if (Input.GetAxis("Horizontal") != 0)
                 print("axis X");
             if (Input.GetAxis("Vertical") != 0)
