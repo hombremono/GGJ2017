@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class inputManager : MonoBehaviour
 {
-
+    public GameObject ElementsPanel;
+    void Start()
+    {
+    }
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-            print("A button");
+            ElementsPanel.GetComponent<TikiGenerator>().NextElement('A');
         if (Input.GetKeyDown(KeyCode.Joystick1Button1))
-            print("B button");
+            ElementsPanel.GetComponent<TikiGenerator>().NextElement('B');
         if (Input.GetKeyDown(KeyCode.Joystick1Button2))
-            print("X button");
+            ElementsPanel.GetComponent<TikiGenerator>().NextElement('X');
         if (Input.GetKeyDown(KeyCode.Joystick1Button3))
-            print("Y button");
+            ElementsPanel.GetComponent<TikiGenerator>().NextElement('Y');
         if (Input.GetKeyDown(KeyCode.Joystick1Button7))
             print("START button");
     }
