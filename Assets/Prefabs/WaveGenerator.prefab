@@ -9,51 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1322365669216252}
+  m_RootGameObject: {fileID: 1819997211913030}
   m_IsPrefabParent: 1
---- !u!1 &1322365669216252
+--- !u!1 &1819997211913030
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4513360674335974}
-  - component: {fileID: 114972768559747638}
+  - component: {fileID: 4186558897452038}
+  - component: {fileID: 114332155293617858}
   m_Layer: 0
-  m_Name: ElementsPanel
+  m_Name: WaveGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4513360674335974
+--- !u!4 &4186558897452038
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1322365669216252}
+  m_GameObject: {fileID: 1819997211913030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 231.5, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114972768559747638
+--- !u!114 &114332155293617858
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1322365669216252}
+  m_GameObject: {fileID: 1819997211913030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4956d7d30d0f247a4d645f6b7eb33c, type: 3}
+  m_Script: {fileID: 11500000, guid: dfa339dd80f91c44988edfd5b0578e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SequenceX: 580058005800
-  SequenceY: 590059005900
-  SequenceA: 410041004100
-  SequenceB: 420042004200
   CurrentSequence: 
   txt_CurrentSequence: {fileID: 0}
+  txt_Waves: {fileID: 0}

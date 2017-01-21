@@ -10,35 +10,30 @@ public class TikiGenerator : MonoBehaviour {
     public List<char> SequenceA;
     public List<char> SequenceB;
     public List<char> CurrentSequence;
-    public int SequenceSize;
-    public Text txt_CurrentSequence;
+    public UnityEngine.UI.Text txt_CurrentSequence;
+    public Text txt_Stack;
+    private List<char> Stack;
+    public int StackMaxSize;
 
     // Use this for initialization
     void Start () {
         if (CurrentSequence == null)
             CurrentSequence = new List<char>();
+        Stack = new List<char>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            this.NextElement('X');
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            this.NextElement('Y');
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            this.NextElement('A');
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-            this.NextElement('B');
     }
 
     public void NextElement(char nextElement)
     {
-
         CurrentSequence.Add(nextElement);
+        UpdateCurrentSequenceText();
         if (CurrentSequence.Count == 3)
         {
-            if (CompareLists(SequenceX)) 
+            if (CompareLists(SequenceX))
                 MatchFound('X');
             if (CompareLists(SequenceY))
                 MatchFound('Y');
@@ -48,8 +43,9 @@ public class TikiGenerator : MonoBehaviour {
                 MatchFound('B');
 
             CurrentSequence = new List<char>();
+            
         }
-        updateCurrentSequenceText();
+        
     }
 
     private bool CompareLists(List<char> Sequence)
@@ -65,18 +61,31 @@ public class TikiGenerator : MonoBehaviour {
 
     public void MatchFound(char Button)
     {
-        Debug.Log("Secuencia correcata: "+Button);
+        if (Stack.Count == StackMaxSize)
+            Stack.RemoveAt(0);
+        Stack.Add(Button);
+        UpdateStackText();
         //TODO
     }
 
-    public void updateCurrentSequenceText()
+    public void UpdateCurrentSequenceText()
     {
-        string text = string.Empty;
+        string text =string.Empty;
 
         foreach (var item in CurrentSequence)
         {
             text += item.ToString() + "  ";
         }
         txt_CurrentSequence.text = text;
+    }
+    public void UpdateStackText()
+    {
+        string text = string.Empty;
+        for (int i = Stack.Count-1; i >=0; i--)
+        {
+            text += Stack[i].ToString()+"\n";
+        }
+       
+        txt_Stack.text = text;
     }
 }
