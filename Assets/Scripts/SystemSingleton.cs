@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,12 @@ public class SystemSingleton : Singleton<SystemSingleton>
     public int population;
     public float populationGrowthrate = 0f;
 
+
+
+    public void WaveHit (float damage)
+    {
+        population -= Convert.ToInt32(damage);
+    }
 
 
 

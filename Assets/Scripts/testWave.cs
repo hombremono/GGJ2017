@@ -7,7 +7,8 @@ public class testWave : MonoBehaviour
 
     private Transform target;
     public float speed;
-    
+    public float WaveStrength=10;
+
 
 
 
@@ -22,16 +23,15 @@ public class testWave : MonoBehaviour
 	void Update ()
 	{
 
-            if (Vector3.Distance(target.position, transform.position) > 2.0)
-            {
-                float step = speed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        
-        
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+
+    }
+
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        SystemSingleton.Instance.WaveHit(WaveStrength);
+        Destroy(gameObject);
     }
 }
