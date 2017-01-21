@@ -18,5 +18,9 @@ public class inputManager : MonoBehaviour
             print("Y button");
         if (Input.GetKeyDown(KeyCode.Joystick1Button7))
             print("START button");
+        if (Input.GetAxis("Horizontal") != 0)
+            print("axis X");
+        if (Input.GetAxis("Vertical") != 0)
+            print("axis Y");
     }
 }
