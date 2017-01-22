@@ -1272,21 +1272,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ba6f25c3093a046a80a24789dd44bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  Mascara: {fileID: 0}
-  Cara: {fileID: 0}
-  X_color: {r: 0, g: 0, b: 0, a: 0}
-  Y_color: {r: 0, g: 0, b: 0, a: 0}
-  A_color: {r: 0, g: 0, b: 0, a: 0}
-  B_color: {r: 0, g: 0, b: 0, a: 0}
-=======
+
   Mascara: {fileID: 21300000, guid: 263d0fabbfd3c394986fae5907845764, type: 3}
   Cara: {fileID: 21300000, guid: 9352cb1cd02fd1d4aba68537ccef2971, type: 3}
   X_color: {r: 0.19999981, g: 0, b: 1, a: 0.991}
   Y_color: {r: 1, g: 0.6559092, b: 0, a: 0.984}
   A_color: {r: 0, g: 1, b: 0, a: 0.991}
   B_color: {r: 1, g: 0, b: 0, a: 1}
->>>>>>> 21d22560d8b7ef84654b7eb7a4bc87d3e614c13a
+
 --- !u!114 &114260567170010066
 MonoBehaviour:
   m_ObjectHideFlags: 1
