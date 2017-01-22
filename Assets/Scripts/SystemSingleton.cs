@@ -15,6 +15,10 @@ public class SystemSingleton : Singleton<SystemSingleton>
     public void WaveHit (float damage)
     {
         population -= Convert.ToInt32(damage);
+        if (population < 0)
+        {
+            population = 0;
+        }
     }
 
 

@@ -18,6 +18,7 @@ public class TestSpawner : MonoBehaviour {
 
    void Start ()
     {
+        
         WavesSingleton.Instance.populateDictionary();
         StartCoroutine(Spawn());
     }

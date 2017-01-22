@@ -210,8 +210,9 @@ GameObject:
   - component: {fileID: 224666889750137478}
   - component: {fileID: 222336390429249592}
   - component: {fileID: 114500387157880150}
-  - component: {fileID: 58836111109600822}
   - component: {fileID: 50839503943711278}
+  - component: {fileID: 68216820338381066}
+  - component: {fileID: 68163640296852530}
   m_Layer: 0
   m_Name: Isla
   m_TagString: Terrain
@@ -328,21 +329,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &58836111109600822
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978638144313896}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 850
+  m_Constraints: 7
 --- !u!64 &64702145527783424
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -357,6 +344,75 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!68 &68163640296852530
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978638144313896}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 760.31}
+  m_Points:
+  - {x: 24.997198, y: 19.122925}
+  - {x: 102.66766, y: -0.0053100586}
+  - {x: 300.21674, y: -122.36981}
+  - {x: 437.368, y: -222.6012}
+  - {x: 631.4658, y: -382.96936}
+  - {x: 735.6214, y: -577.61957}
+  - {x: 740.10876, y: -803.3042}
+  - {x: 646.60706, y: -938.7248}
+  - {x: 657.6301, y: -1124.3413}
+  - {x: 569.077, y: -1381.1775}
+  - {x: 297.66263, y: -1504.8461}
+  - {x: 23.93257, y: -1533.1554}
+  - {x: -385.72034, y: -1488.6768}
+  - {x: -642.01965, y: -1300.0974}
+  - {x: -759.09705, y: -1067.0433}
+  - {x: -729.7471, y: -731.7787}
+  - {x: -633.512, y: -469.7195}
+  - {x: -566.44226, y: -236.73676}
+  - {x: -397.29333, y: -124.752686}
+  - {x: -212.74475, y: -26.517334}
+  - {x: -21.19172, y: 24.749329}
+  - {x: 44.844208, y: 28.426636}
+  - {x: 125.85792, y: -1.2379761}
+--- !u!68 &68216820338381066
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978638144313896}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 420}
+  m_Points:
+  - {x: 12.423333, y: -12.930481}
+  - {x: -178.65262, y: -52.717834}
+  - {x: -284.5905, y: -157.31787}
+  - {x: -345.1637, y: -343.12268}
+  - {x: -344.56866, y: -485.157}
+  - {x: -285.79962, y: -669.8125}
+  - {x: -104.14102, y: -837.52747}
+  - {x: 126.023476, y: -815.2295}
+  - {x: 245.10735, y: -723.54956}
+  - {x: 373.3706, y: -530.933}
+  - {x: 379.08087, y: -368.79346}
+  - {x: 348.82013, y: -233.49738}
+  - {x: 207.55222, y: -115.92047}
+  - {x: 97.09001, y: -22.153381}
+  - {x: 79.39231, y: -21.12851}
+  - {x: 74.53607, y: 20.326538}
+  - {x: 62.864693, y: -12.302826}
+  - {x: 61.55468, y: -12.674072}
+  - {x: 44.5443, y: -12.614777}
+  - {x: 0.5, y: 0}
 --- !u!114 &114205645038457402
 MonoBehaviour:
   m_ObjectHideFlags: 1
