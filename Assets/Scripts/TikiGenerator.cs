@@ -19,8 +19,12 @@ public class TikiGenerator : MonoBehaviour {
     void Start () {
         if (CurrentSequence == null)
             CurrentSequence = new List<char>();
-        Stack = new List<char>();
-	}
+        // Stack = new List<char>();
+        Stack = WavesSingleton.Instance.Stack;
+
+
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {

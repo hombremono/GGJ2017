@@ -57,3 +57,5 @@ MonoBehaviour:
   SequenceB: 420042004200
   CurrentSequence: 
   txt_CurrentSequence: {fileID: 0}
+  txt_Stack: {fileID: 0}
+  StackMaxSize: 5

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4298432368542000}
   - component: {fileID: 114362951670171190}
   - component: {fileID: 114710768092468406}
+  - component: {fileID: 114633609120801724}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -181,6 +182,21 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!114 &114633609120801724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067298378848454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81061f25f7f7a744ebe38e893c1f16a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceSize: 3
+  wavesCount: 20
+  Stack: 
+  txt_Waves: {fileID: 0}
 --- !u!114 &114710768092468406
 MonoBehaviour:
   m_ObjectHideFlags: 1
