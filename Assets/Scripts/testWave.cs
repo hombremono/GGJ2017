@@ -13,6 +13,8 @@ public class testWave : MonoBehaviour
     public char[] Sequence;
     public int ElementIndex;
 
+    public float movementTime = 2;
+    private float lerpTime = 0.05f;
 
 
 
@@ -24,21 +26,33 @@ public class testWave : MonoBehaviour
         Vector3 p2 = target.transform.position;
         float angle = Mathf.Atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Mathf.PI;
         gameObject.transform.Rotate(new Vector3(0,0,angle));
-
-    }
-	
-	// Update is called once per frame
-	void Update ()
-	{
-
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-        //CurrentPos.position = gameObject.transform.position;
-       
+        StartCoroutine("MoveTo", p2);
 
     }
 
+    // Update is called once per frame
+    //void Update ()
+    //{
 
+    //       float step = speed * Time.deltaTime;
+    //       transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+    //       //CurrentPos.position = gameObject.transform.position;
+
+
+    //   }
+
+    IEnumerator MoveTo(Vector3 destination)
+    {
+        float timeEllapsed = 0;
+        Vector3 origin = transform.position;
+
+        while (timeEllapsed < movementTime)
+        {
+            transform.position = Vector3.Lerp(origin, destination, timeEllapsed / movementTime);
+            timeEllapsed += lerpTime;
+            yield return new WaitForSeconds(lerpTime);
+        }
+    }
     void OnCollisionEnter2D(Collision2D coll)
     {
         SystemSingleton.Instance.WaveHit(WaveStrength);
