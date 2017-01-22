@@ -15,7 +15,6 @@ public class TikisManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         images = gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>();
-        print("tikis " + images.Length);
         ClearTikis();
     }
 	
@@ -32,34 +31,32 @@ public class TikisManager : MonoBehaviour {
     }
     public void DrawTikis(List<char> Stack)
     {
-        int count = 5;
+        ClearTikis();
+        int count = images.Length-1;
+
         foreach (var tiki in Stack)
         {
             switch (tiki)
             {
                 case 'A':
-                    print("A");
                     images[count].color = A_color;
                     images[count].sprite = Cara;
                     images[count].enabled = true;
                     count--;
                     break;
                 case 'B':
-                    print("B");
                     images[count].sprite = Cara;
                     images[count].color = B_color;
                     images[count].enabled = true;
                     count--;
                     break;
                 case 'X':
-                    print("X");
                     images[count].sprite = Cara;
                     images[count].color = X_color;
                     images[count].enabled = true;
                     count--;
                     break;
                 case 'Y':
-                    print("Y");
                     images[count].sprite = Cara;
                     images[count].color = Y_color;
                     images[count].enabled = true;
@@ -76,9 +73,10 @@ public class TikisManager : MonoBehaviour {
             
             
         }
-        for (int i = count; i >=0; i--)
-        {
-            images[count].enabled = false;
-        }
+        //for (int i = 100; i >=-100; i--)
+        //{
+        //    print("deleting " + i);
+        //    images[count].enabled = false;
+        //}
     }
 }

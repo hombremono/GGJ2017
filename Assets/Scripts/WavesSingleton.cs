@@ -9,18 +9,18 @@ public class WavesSingleton : Singleton<WavesSingleton>
 {
     protected WavesSingleton() { } // guarantee this will be always a singleton only - can't use the constructor!
 
-    public int sequenceSize=3;
+    public int sequenceSize = 3;
     public int wavesMaxCount = 20;
     public List<GameObject> WavesList;
     public List<char> Stack;
     private char[] Chars = new char[4] { 'A', 'B', 'X', 'Y' };
     public Text txt_Waves;
-    private Dictionary<string,bool> posibleCombinations=new Dictionary<string, bool>();
+    private Dictionary<string, bool> posibleCombinations = new Dictionary<string, bool>();
     private string[] lstKeys = new string[64];
 
-    void Start ()
+    void Start()
     {
-       
+
     }
 
     public char[] GetSequence()
@@ -43,7 +43,7 @@ public class WavesSingleton : Singleton<WavesSingleton>
             {
                 posibleCombinations[sequence] = false;
                 return sequence.ToCharArray();
-                
+
             }
         }
 
@@ -95,7 +95,8 @@ public class WavesSingleton : Singleton<WavesSingleton>
     {
         WavesList.Remove(wave);
         Destroy(wave);
-      //  updateWavesText();
+        
+        //  updateWavesText();
     }
 
 
@@ -119,21 +120,29 @@ public class WavesSingleton : Singleton<WavesSingleton>
 
     public void KillWave(string sequence)
     {
-        if (!posibleCombinations[sequence])
+        int element = 99;
+        if (Stack.Any())
         {
-            GameObject KilledWave = null;
-            posibleCombinations[sequence] = true;
-            foreach (var wave in WavesList)
+            element = Chars.ToList().IndexOf(Stack.ElementAt(0));
+            Stack.RemoveAt(0);
+            GameObject.FindObjectOfType<TikisManager>().DrawTikis(Stack);
+
+            if (!posibleCombinations[sequence])
             {
-                string waveSequence = new string(wave.GetComponent<testWave>().Sequence);
-                if (waveSequence == sequence)
+                GameObject KilledWave = null;
+                posibleCombinations[sequence] = true;
+                foreach (var wave in WavesList)
                 {
-                    KilledWave = wave;
-                    break;
+                    string waveSequence = new string(wave.GetComponent<testWave>().Sequence);
+                    if (waveSequence == sequence && wave.GetComponent<testWave>().element == element)
+                    {
+                        KilledWave = wave;
+                        break;
+                    }
                 }
+                if (KilledWave != null)
+                    RemoveWave(KilledWave);
             }
-            if (KilledWave != null)
-                RemoveWave(KilledWave);
         }
     }
 

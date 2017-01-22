@@ -177,7 +177,8 @@ MonoBehaviour:
   CurrentSequence: 
   txt_CurrentSequence: {fileID: 0}
   txt_Stack: {fileID: 0}
-  StackMaxSize: 5
+  StackMaxSize: 3
+  Tikis: {fileID: 0}
 --- !u!114 &114428425517284850
 MonoBehaviour:
   m_ObjectHideFlags: 1
