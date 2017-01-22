@@ -9,7 +9,7 @@ public class TestSpawner : MonoBehaviour {
     public Transform centerPoint;
     public Transform[] attackPoints;
     public GameObject prefabToSpawn;
-    public int spawnRate;
+    public float spawnRate;
     //public float spawnTime = 3f;
     //----------------------------------------------------
 
