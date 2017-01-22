@@ -10,7 +10,7 @@ public class testWave : MonoBehaviour
     private Transform CurrentPos;
     public float speed;
     public float WaveStrength=10;
-    public List<char> Sequence;
+    public char[] Sequence;
     public int ElementIndex;
 
 
@@ -43,12 +43,9 @@ public class testWave : MonoBehaviour
     }
     public void setSequenceText()
     {
+
+        string txtSequence = new string(Sequence);
         
-        string txtSequence = string.Empty;
-        foreach (var item in Sequence)
-        {
-            txtSequence += item + " ";
-        }
         gameObject.GetComponentInChildren<Canvas>().GetComponentInChildren<Text>().text = txtSequence;
     }
 }

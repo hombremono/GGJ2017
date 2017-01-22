@@ -14,7 +14,6 @@ public class SystemManager : MonoBehaviour {
 
     void Start ()
     {
-		
 	}
 	
 

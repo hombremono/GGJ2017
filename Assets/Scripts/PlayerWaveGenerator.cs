@@ -14,12 +14,6 @@ public class PlayerWaveGenerator : MonoBehaviour {
     void Start () {
         WavesList = WavesSingleton.Instance.WavesList;
 
-        ////Ini para test
-        //WavesList.Add(new List<char> { 'A', 'B', 'A' });
-        //WavesList.Add(new List<char> { 'X', 'B', 'A' });
-        //WavesList.Add(new List<char> { 'B', 'Y', 'Y' });
-        //WavesList.Add(new List<char> { 'X', 'Y', 'A' });
-       // updateWavesText();
     }
 
     // Update is called once per frame
@@ -38,26 +32,16 @@ public class PlayerWaveGenerator : MonoBehaviour {
 
     public void NextElement(char nextElement)
     {
-        GameObject KilledWave=null;
         CurrentSequence.Add(nextElement);
         updateCurrentSequenceText();
         if (CurrentSequence.Count == 3)
         {
-            foreach (var wave in WavesList)
-            {
-                if (CompareLists(wave.GetComponent<testWave>().Sequence))
-                {
-                    KilledWave = wave;
-                    break;
-                }
-            }
+            string sequence = new string(CurrentSequence.ToArray());
+            WavesSingleton.Instance.KillWave(sequence);
             CurrentSequence = new List<char>();
-            if (KilledWave != null)
-            {
-               WavesSingleton.Instance.RemoveWave(KilledWave);
-            }
-                
         }
+        
+       
     }
 
     private bool CompareLists(List<char> Sequence)
@@ -71,11 +55,7 @@ public class PlayerWaveGenerator : MonoBehaviour {
         return true;
     }
 
-    public void MatchFound(char Button)
-    {
-        Debug.Log("Secuencia correcata: " + Button);
-        //TODO
-    }
+   
 
     public void updateCurrentSequenceText()
     {

@@ -11,15 +11,5 @@ public class SequenceGenerator : MonoBehaviour {
         Chars = new char[4] { 'A', 'B', 'X', 'Y' };
 	}
 	
-	List<char> GenerateSequence()
-    {
-        List<char> Sequence = new List<char>();
-        for (int i = 0; i < SequenceSize; i++)
-        {
-            var number = Random.Range(1, 4);
-            Debug.Log(number);
-            Sequence.Add(Chars[number]);
-        }
-        return Sequence;
-    }
+	
 }
