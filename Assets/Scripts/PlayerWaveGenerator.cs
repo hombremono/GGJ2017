@@ -32,7 +32,10 @@ public class PlayerWaveGenerator : MonoBehaviour {
 
     public void NextElement(char nextElement)
     {
-        CurrentSequence.Add(nextElement);
+        if (nextElement == 'R')
+            CurrentSequence = new List<char>();
+        else
+            CurrentSequence.Add(nextElement);
         updateCurrentSequenceText();
         if (CurrentSequence.Count == 3)
         {

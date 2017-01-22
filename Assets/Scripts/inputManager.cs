@@ -29,6 +29,10 @@ public class inputManager : MonoBehaviour
                 SendCommand('Y');
             if (Input.GetKeyDown(KeyCode.Joystick1Button7))
                 print("START button");
+            if (Mathf.Round(Input.GetAxisRaw("T_J1")) != 0)
+            {
+                SendCommand('R');
+            }
             //if (Input.GetAxis("Horizontal") != 0)
             //if (Input.GetAxis("Vertical") != 0)
         }
@@ -44,10 +48,14 @@ public class inputManager : MonoBehaviour
                 SendCommand('Y');
             if (Input.GetKeyDown(KeyCode.Joystick2Button7))
                 print("START button");
-            if (Input.GetAxis("Horizontal") != 0)
-                print("axis X");
-            if (Input.GetAxis("Vertical") != 0)
-                print("axis Y");
+            //if (Input.GetAxis("Horizontal") != 0)
+            //    print("axis X");
+            //if (Input.GetAxis("Vertical") != 0)
+            //    print("axis Y");
+            if (Mathf.Round(Input.GetAxisRaw("T_J2")) != 0)
+            {
+                SendCommand('R');
+            }
         }
     }
 

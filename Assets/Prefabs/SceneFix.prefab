@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 224769271310015662}
   - component: {fileID: 223387756271923200}
   - component: {fileID: 114425021496948578}
+  - component: {fileID: 114233882782080090}
   m_Layer: 0
   m_Name: TikiZone
   m_TagString: Untagged
@@ -1204,6 +1205,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Population: 0'
+--- !u!114 &114233882782080090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359267082112242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ba6f25c3093a046a80a24789dd44bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114260567170010066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1656,7 +1668,7 @@ MonoBehaviour:
   - {fileID: 4625649763850326}
   prefabToSpawn: {fileID: 1148019128825218, guid: 4d043063c2a034a4cbfb7b98fe49927c,
     type: 2}
-  spawnRate: 1
+  spawnRate: 3
 --- !u!114 &114969925628703996
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -84,7 +84,7 @@ public class WavesSingleton : Singleton<WavesSingleton>
         if (WavesList.Count < wavesMaxCount)
         {
             newWave.GetComponent<testWave>().Sequence = GetSequence();
-            newWave.GetComponent<testWave>().setSequenceText();
+            newWave.GetComponent<testWave>().setSequenceImage();
             WavesList.Add(newWave);
             return true;
         }

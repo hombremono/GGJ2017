@@ -14,6 +14,8 @@ public class TikiGenerator : MonoBehaviour {
     public Text txt_Stack;
     private List<char> Stack;
     public int StackMaxSize;
+    public GameObject Tikis;
+
 
     // Use this for initialization
     void Start () {
@@ -21,9 +23,6 @@ public class TikiGenerator : MonoBehaviour {
             CurrentSequence = new List<char>();
         // Stack = new List<char>();
         Stack = WavesSingleton.Instance.Stack;
-
-
-        
     }
 	
 	// Update is called once per frame
@@ -33,7 +32,11 @@ public class TikiGenerator : MonoBehaviour {
 
     public void NextElement(char nextElement)
     {
-        CurrentSequence.Add(nextElement);
+        if (nextElement == 'R')
+            CurrentSequence = new List<char>();
+        else
+            CurrentSequence.Add(nextElement);
+        
         UpdateCurrentSequenceText();
         if (CurrentSequence.Count == 3)
         {
@@ -68,7 +71,8 @@ public class TikiGenerator : MonoBehaviour {
         if (Stack.Count == StackMaxSize)
             Stack.RemoveAt(0);
         Stack.Add(Button);
-        UpdateStackText();
+       // UpdateStackText();
+        Tikis.GetComponent<TikisManager>().DrawTikis(Stack);
         //TODO
     }
 

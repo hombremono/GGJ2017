@@ -16,11 +16,17 @@ public class testWave : MonoBehaviour
     public float movementTime = 2;
     private float lerpTime = 0.05f;
 
+    Image[] images;
+    public Sprite imageX;
+    public Sprite imageY;
+    public Sprite imageA;
+    public Sprite imageB;
 
 
     // Use this for initialization
     void Start ()
     {
+        
         target = SystemSingleton.Instance.centerPoint;
         Vector3 p1 = gameObject.transform.position;
         Vector3 p2 = target.transform.position;
@@ -29,17 +35,6 @@ public class testWave : MonoBehaviour
         StartCoroutine("MoveTo", p2);
 
     }
-
-    // Update is called once per frame
-    //void Update ()
-    //{
-
-    //       float step = speed * Time.deltaTime;
-    //       transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-    //       //CurrentPos.position = gameObject.transform.position;
-
-
-    //   }
 
     IEnumerator MoveTo(Vector3 destination)
     {
@@ -65,6 +60,32 @@ public class testWave : MonoBehaviour
 
         string txtSequence = new string(Sequence);
         
-        gameObject.GetComponentInChildren<Canvas>().GetComponentInChildren<Text>().text = txtSequence;
+       // gameObject.GetComponentInChildren<Canvas>().GetComponentInChildren<Text>().text = txtSequence;
+    }
+    public void setSequenceImage()
+    {
+        images = gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>();
+        for (int i = 0; i < images.Length; i++)
+        {
+            Sprite newImage = null;
+            switch (Sequence[i])
+            {
+                case 'A':
+                    newImage = imageA;
+                    break;
+                case 'B':
+                    newImage = imageB;
+                    break;
+                case 'X':
+                    newImage = imageX;
+                    break;
+                case 'Y':
+                    newImage = imageY;
+                    break;
+                default:
+                    break;
+            }
+            images[i].sprite = newImage;
+        }
     }
 }
