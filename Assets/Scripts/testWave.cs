@@ -11,7 +11,7 @@ public class testWave : MonoBehaviour
     public float speed;
     public float WaveStrength=10;
     public char[] Sequence;
-    public int ElementIndex;
+    public int element;
 
     public float movementTime = 2;
     private float lerpTime = 0.05f;
@@ -26,12 +26,15 @@ public class testWave : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        
+        element = Random.Range(0, 3);
         target = SystemSingleton.Instance.centerPoint;
         Vector3 p1 = gameObject.transform.position;
         Vector3 p2 = target.transform.position;
         float angle = Mathf.Atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Mathf.PI;
         gameObject.transform.Rotate(new Vector3(0,0,angle));
+        setWaveColor();
+
+
         StartCoroutine("MoveTo", p2);
 
     }
@@ -86,6 +89,27 @@ public class testWave : MonoBehaviour
                     break;
             }
             images[i].sprite = newImage;
+        }
+
+    }
+    private void setWaveColor()
+    {
+        switch (element)
+        {
+            case 0:
+                gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().startColor = Color.green;
+                break;
+            case 1:
+                gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().startColor = Color.red;
+                break;
+            case 2:
+                gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().startColor = Color.blue;
+                break;
+            case 3:
+                gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().startColor = Color.yellow;
+                break;
+            default:
+                break;
         }
     }
 }
