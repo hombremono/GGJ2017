@@ -12,6 +12,7 @@ public class TikisManager : MonoBehaviour {
     public Color Y_color;
     public Color A_color;
     public Color B_color;
+    public List<AudioClip> UcaUcaList;
     // Use this for initialization
     void Start () {
         images = gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>();

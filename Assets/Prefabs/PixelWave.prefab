@@ -246,7 +246,7 @@ MonoBehaviour:
   WaveStrength: 10
   Sequence: 
   element: 0
-  movementTime: 10
+  movementTime: 15
   imageX: {fileID: 21300000, guid: ee754bb2d8a018348b69860f59f8870e, type: 3}
   imageY: {fileID: 21300002, guid: ee754bb2d8a018348b69860f59f8870e, type: 3}
   imageA: {fileID: 21300006, guid: ee754bb2d8a018348b69860f59f8870e, type: 3}

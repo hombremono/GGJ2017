@@ -33,7 +33,8 @@ public class testWave : MonoBehaviour
         float angle = Mathf.Atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Mathf.PI;
         gameObject.transform.Rotate(new Vector3(0,0,angle));
         setWaveColor();
-
+        gameObject.transform.GetChild(3).transform.rotation = Quaternion.identity;
+        gameObject.transform.GetChild(3).transform.position = gameObject.transform.position - new Vector3(0, 0.7f, 0);
 
         StartCoroutine("MoveTo", p2);
 

@@ -93,6 +93,7 @@ public class WavesSingleton : Singleton<WavesSingleton>
     }
     public void RemoveWave(GameObject wave)
     {
+        posibleCombinations[new string(wave.GetComponent<testWave>().Sequence)] = true;
         WavesList.Remove(wave);
         Destroy(wave);
         

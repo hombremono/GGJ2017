@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+
 using UnityEngine;
 
 public class PersonIA : MonoBehaviour
 {
     private Vector3 targetPosition = Vector3.forward;
     public float speed = 1;
+    
 
 	// Use this for initialization
 	void Start () {
